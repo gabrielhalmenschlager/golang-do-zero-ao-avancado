@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+
 	var i int
 	var f float64
 	var s string
