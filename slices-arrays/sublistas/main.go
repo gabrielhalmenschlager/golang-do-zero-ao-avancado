@@ -10,9 +10,10 @@ func main() {
 	for i := 0; i < len(listaToda); i++ {
 		if listaToda[i] < 5 {
 			listaMenorQueCinco = append(listaMenorQueCinco, listaToda[i])
+			fmt.Println("Posição [", i, "]", listaMenorQueCinco)
 		}
 	}
 
-	fmt.Println(listaMenorQueCinco)
+	fmt.Println("Lista menor que cinco: ", listaMenorQueCinco)
 
 }
