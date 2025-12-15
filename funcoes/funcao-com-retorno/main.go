@@ -3,11 +3,19 @@ package main
 import "fmt"
 
 func main() {
-	resultado := Soma(2, 3)
-	fmt.Println("O resultado da soma é: ", resultado)
+	soma, subtracao, multiplicacao, divisao := Operacao(2, 3)
+
+	fmt.Println("O resultado da soma é", soma)
+	fmt.Println("O resultado da subtração é", subtracao)
+	fmt.Println("O resultado da multiplicação é", multiplicacao)
+	fmt.Println("O resultado da divisão é", divisao)
 }
 
-func Soma(numero1, numero2 int) int {
-	resultado := numero1 + numero2
-	return resultado
+func Operacao(numero1, numero2 int) (int, int, int, int) {
+	soma := numero1 + numero2
+	subtracao := numero1 - numero2
+	multiplicacao := numero1 * numero2
+	divisao := numero1 / numero2
+
+	return soma, subtracao, multiplicacao, divisao
 }
