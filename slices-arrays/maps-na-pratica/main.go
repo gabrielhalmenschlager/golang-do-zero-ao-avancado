@@ -3,6 +3,7 @@ package main
 import "fmt"
 
 func main() {
+
 	m := make(map[string]int)
 	m["sp"] = 10000000
 	m["cg"] = 900000
@@ -15,4 +16,5 @@ func main() {
 	}
 
 	fmt.Println(m)
+
 }
