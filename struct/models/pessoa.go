@@ -1,23 +1,27 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type Pessoa struct {
 	Nome             string
 	Endereco         Endereco
 	DataDeNascimento time.Time
+	Idade            int
 }
 
 // Método
-func (p Pessoa) IdadeAtual() int {
+func (p *Pessoa) CalculaIdade() {
 	anoDeNascimento := p.DataDeNascimento.Year()
 	anoAtual := time.Now().Year()
-	return anoAtual - anoDeNascimento
+	p.Idade = anoAtual - anoDeNascimento
 }
 
-// Função
-func CalculaIdade(p Pessoa) int {
+/* Função
+func IdadeAtual(p Pessoa) int {
 	anoDeNascimento := p.DataDeNascimento.Year()
 	anoAtual := time.Now().Year()
 	return anoAtual - anoDeNascimento
 }
+*/

@@ -25,8 +25,8 @@ func main() {
 	fmt.Println(endereco)
 
 	// idade := models.CalculaIdade(pessoa) Usando a Função
-	idade := pessoa.IdadeAtual() // Usando o Método
 
-	fmt.Println(idade)
+	pessoa.CalculaIdade()
+	fmt.Println(pessoa.Idade)
 
 }
