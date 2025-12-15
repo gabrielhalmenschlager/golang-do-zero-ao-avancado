@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"golang-do-zero-ao-avancado/struct/models"
+	"time"
 )
 
 func main() {
@@ -15,12 +16,17 @@ func main() {
 	}
 
 	pessoa := models.Pessoa{
-		Nome:     "Gabriel",
-		Endereco: endereco,
+		Nome:             "Gabriel",
+		Endereco:         endereco,
+		DataDeNascimento: time.Date(2007, 12, 14, 0, 0, 0, 0, time.Local),
 	}
 
-	endereco.Numero = 150
-
 	fmt.Println(pessoa)
+	fmt.Println(endereco)
+
+	// idade := models.CalculaIdade(pessoa) Usando a Função
+	idade := pessoa.IdadeAtual() // Usando o Método
+
+	fmt.Println(idade)
 
 }
