@@ -8,22 +8,22 @@ import (
 
 func main() {
 
-	var itens []models.ItemDaCompra
-	itens = append(itens, models.ItemDaCompra{Nome: "Arroz", Quantidade: 2})
-	itens = append(itens, models.ItemDaCompra{Nome: "Feijão", Quantidade: 6})
-	itens = append(itens, models.ItemDaCompra{Nome: "Batata", Quantidade: 8})
+	var nomeDosItens []string
+	nomeDosItens = append(nomeDosItens, "Arroz")
+	nomeDosItens = append(nomeDosItens, "Feijão")
+	nomeDosItens = append(nomeDosItens, "Carne")
 
-	compra := models.Compra{
-		Mercado: "Mercado Super Legal",
-		Data:    time.Now(),
-		Itens:   itens,
+	compra, err := models.NovaCompra("Mercadinho", time.Now(), nomeDosItens)
+	if err != nil {
+		fmt.Println(err.Error())
+	} else {
+		fmt.Printf("Mercado: %s\n", compra.Mercado)
+		fmt.Printf("Data: %s\n", compra.Data.Format("02/01/2006 15:04"))
+		fmt.Println("Itens:")
+
+		for _, item := range compra.Itens {
+			fmt.Printf("- %s\n", item.Nome)
+		}
 	}
 
-	fmt.Printf("Mercado: %s\n", compra.Mercado)
-	fmt.Printf("Data: %s\n", compra.Data.Format("02/01/2006 15:04"))
-	fmt.Println("Itens:")
-
-	for _, item := range compra.Itens {
-		fmt.Printf("- %s - Quantidade: %d\n", item.Nome, item.Quantidade)
-	}
 }
