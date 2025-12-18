@@ -44,4 +44,5 @@ func main() {
 
 	ExibiGeometria(retangulo)
 	ExibiGeometria(circulo)
+
 }
